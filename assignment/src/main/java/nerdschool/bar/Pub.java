@@ -14,26 +14,30 @@ public class Pub {
         if (amount > 2 && (drink == GT || drink == BACARDI_SPECIAL)) {
             throw new RuntimeException("Too many drinks, max 2.");
         }
-        int price;
+        
         if (drink.equals(ONE_BEER)) {
-            price = 74;
+            price() = 74;
         }
         else if (drink.equals(ONE_CIDER)) {
-            price = 103;
+            price() = 103;
         }
-        else if (drink.equals(A_PROPER_CIDER)) price = 110;
+        else if (drink.equals(A_PROPER_CIDER)) price() = 110;
         else if (drink.equals(GT)) {
-            price = ingredient6() + ingredient5() + ingredient4();
+            price() = ingredient6() + ingredient5() + ingredient4();
         }
         else if (drink.equals(BACARDI_SPECIAL)) {
-            price = ingredient6()/2 + ingredient1() + ingredient2() + ingredient3();
+            price() = ingredient6()/2 + ingredient1() + ingredient2() + ingredient3();
         }
         else {
             throw new RuntimeException("No such drink exists");
         }
         if (student && (drink == ONE_CIDER || drink == ONE_BEER || drink == A_PROPER_CIDER)) {
-            price = price - price/10;
+            price() = price() - price()/10;
         }
+        
+    }
+    
+    int price(){
         return price*amount;
     }
 
